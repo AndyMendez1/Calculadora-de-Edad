@@ -1,5 +1,7 @@
+/* Importación de la fuente principal usada en todo el diseño */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap');
 
+/* Variables globales: colores, tipografías y tamaños para mantener coherencia */
 :root{
 
     /*Primary*/
@@ -19,6 +21,7 @@
 
 }
 
+/* Reinicio general para asegurar consistencia visual */
 *,
 *::before,
 *::after{
@@ -27,6 +30,7 @@
     box-sizing: border-box;
 }
 
+/* Estilos base del cuerpo: centrado y fondo general */
 body{
     font-family: var(--font-family-poppins);
     background-color: var(--color-grey-100);
@@ -36,6 +40,7 @@ body{
     place-content: center;
 }
 
+/* Contenedor principal: caja blanca con padding y sombra decorativa */
 .container{
     background-color: var(--color-white);
     padding: 2.5rem;
@@ -46,24 +51,28 @@ body{
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
 }
 
+/* Limpia el estilo visual predeterminado del fieldset */
 fieldset{
     border: none;
     padding: 0;
     margin: 0;
 }
 
+/* Distribuye los campos del formulario en una fila con separación */
 form fieldset{
     display: flex;
     gap: 1.5rem;
     
 }
 
+/* Agrupa cada label-input-error en un bloque vertical */
 .field{
     display: flex;
     flex-direction: column;
     gap: 0.5rem; 
 }
 
+/* Estilos de la etiqueta que describe cada campo */
 label{
     font-weight: 700;
     color: var(--color-grey-500);
@@ -72,6 +81,7 @@ label{
     font-size: 0.8rem;
 }
 
+/* Estilo base de los inputs donde el usuario ingresa datos */
 input{
     font-family: var(--font-family-poppins);
     font-size: var(--font-size-inputs); 
@@ -85,17 +95,20 @@ input{
     border-radius: 0.5rem
 }
 
+/* Marca el campo en foco para mejorar accesibilidad */
 input:focus{
     outline: 1px solid var(--color-purple);
     border-color: var(--color-purple);
 }
 
+/* Contenedor de la línea divisora y el botón */
 .divider{
     display: flex;
     align-items: center;
-    margin: 0,5rem 0;
+    margin: 0.5rem 0;
 }
 
+/* Línea divisora entre formulario y resultados */
 hr{
     flex-grow: 1;
     border: none;
@@ -104,6 +117,7 @@ hr{
 
 }
 
+/* Botón principal de acción: forma circular y color destacado */
 button{
     background-color: var(--color-purple);
     border: none;
@@ -115,15 +129,18 @@ button{
     transition: background-color 0.2s ease;
 }
 
+/* Cambio de color al pasar el cursor para indicar interacción */
 button:hover{
     background-color: var(--color-black);
 }
 
+/* Tamaño del ícono dentro del botón */
 button img{
     width: 2.5rem; 
     height: 2.5rem;
 }
 
+/* Estilos del bloque de resultados visibles tras el cálculo */
 .results div {
     font-size: 5rem;
     font-weight: 700; 
@@ -131,7 +148,7 @@ button img{
     line-height: 1.1;
 }
 
-
+/* Resalta el número de cada resultado (años/meses/días) */
 .results div span:first-child {
     color: var(--color-purple);
     font-weight: 800;
@@ -140,12 +157,14 @@ button img{
     margin-right: 0.5rem;
 }
 
+/* Estilo para el texto que acompaña cada número (years, months...) */
 .results div span:last-child {
     font-weight: 700;
     font-style: italic;
     color: var(--color-black);
 }
 
+/* Mensajes de error debajo de los inputs */
 .error-msg{
     color: var(--color-red);
     font-style: italic;
@@ -154,10 +173,67 @@ button img{
     min-height: 1.2rem;
 }
 
+/* Indica visualmente cuando un campo tiene errores */
 .field-error label{
     color: var(--color-red);
 }
 
 .field-error input{
     border-color: var(--color-red);
+}
+
+
+/* Estilos responsivos para adaptar todo a pantallas móviles */
+@media (max-width: 700px) {
+
+    body {
+        padding: 1rem;
+    }
+
+    .container {
+        width: auto; 
+        padding: 1.5rem;
+        border-radius: 1.5rem 1.5rem 6rem 1.5rem;
+    }
+
+    form fieldset {
+        gap: 1rem; 
+    }
+
+    .field {
+        flex-grow: 1;
+        flex-basis: 0;
+    }
+
+    input {
+        
+        width: 100%; 
+        
+        font-size: 1.5rem; /* 24px */
+        height: auto;
+        padding: 0.75rem 0.5rem;
+    }
+
+    .divider {
+        position: relative;
+        margin: 4rem 0;
+    }
+
+    button {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+
+        padding: 1rem;
+    }
+    
+    button img {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    .results div {
+        font-size: 3rem; /* 48px */
+    }
 }

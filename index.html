@@ -9,27 +9,30 @@
 
 <body>
 
+<!-- Contenedor principal que agrupa formulario y resultados -->
 <main class="container">
 
+    <!-- Formulario encargado de capturar la fecha de nacimiento -->
     <form id="formAge" method="GET">
 
+        <!-- Grupo que organiza los tres campos de fecha en una sola fila -->
         <fieldset>
 
-            <!-- Día -->
+            <!-- Campo de día: etiqueta, input y contenedor de errores -->
             <div class="field">
                 <label for="day">DAY</label>
                 <input type="number" id="day" name="day" placeholder="DD">
                 <p id="dayError" class="error-msg"></p>
             </div>
 
-            <!-- Mes -->
+            <!-- Campo de mes -->
             <div class="field">
                 <label for="month">MONTH</label>
                 <input type="number" id="month" name="month" placeholder="MM">
                 <p id="monthError" class="error-msg"></p>
             </div>
 
-            <!-- Año -->
+            <!-- Campo de año -->
             <div class="field">
                 <label for="year">YEAR</label>
                 <input type="number" id="year" name="year" placeholder="YYYY">
@@ -38,6 +41,7 @@
 
         </fieldset>
 
+        <!-- Separador visual con línea y botón de envío -->
         <div class="divider">
             <hr>
             <button type="submit" class="submit-btn">
@@ -48,18 +52,22 @@
         
     </form>
 
+    <!-- Sección donde se muestran los resultados de la edad -->
     <section id="ageOutput" class="results">
 
+        <!-- Resultado: años -->
         <div>
             <span id="years">--</span>
             <span>years</span>
         </div>
 
+        <!-- Resultado: meses -->
         <div>
             <span id="months">--</span>
             <span>months</span>
         </div>
 
+        <!-- Resultado: días -->
         <div>
             <span id="days">--</span>
             <span>days</span>
@@ -69,6 +77,7 @@
 
 </main>
 
+<!-- Script que contiene toda la lógica de validación y cálculo de edad -->
 <script src="./js/app.js"></script>
 </body>
 </html>
