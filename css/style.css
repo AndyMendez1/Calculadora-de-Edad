@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap');
+
+:root{
+
+    /*Primary*/
+    --color-purple: hsl(259, 100%, 65%);
+    --color-red: hsl(0, 100%, 67%);
+
+    /*Neutral*/
+    --color-white: hsl(0, 100%, 100%);
+    --color-grey-100: hsl(0, 0%, 94%);
+    --color-grey-200: hsl(0, 0%, 86%);
+    --color-grey-500: hsl(0, 1%, 44%);
+    --color-black: hsl(0, 0%, 0%);
+    
+    /*Typography*/
+    --font-family-poppins: 'Poppins', sans-serif;
+    --font-size-inputs: 32px;
+
+}
+
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: var(--font-family-poppins);
+    background-color: var(--color-grey-100);
+
+    min-height: 100vh;
+    display: grid;
+    place-content: center;
+}
+
+.container{
+    background-color: var(--color-white);
+    padding: 2.5rem;
+    width: 690px;
+    
+
+    border-radius: 1.5rem 1.5rem 12rem 1.5rem;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+fieldset{
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+form fieldset{
+    display: flex;
+    gap: 1.5rem;
+    
+}
+
+.field{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; 
+}
+
+label{
+    font-weight: 700;
+    color: var(--color-grey-500);
+    text-transform: uppercase;
+    letter-spacing: 0.15em; 
+    font-size: 0.8rem;
+}
+
+input{
+    font-family: var(--font-family-poppins);
+    font-size: var(--font-size-inputs); 
+    font-weight: 700;
+    color: var(--color-black);
+
+    width: 135px;
+    height: 60px;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-grey-200);
+    border-radius: 0.5rem
+}
+
+input:focus{
+    outline: 1px solid var(--color-purple);
+    border-color: var(--color-purple);
+}
+
+.divider{
+    display: flex;
+    align-items: center;
+    margin: 0,5rem 0;
+}
+
+hr{
+    flex-grow: 1;
+    border: none;
+    height: 1px;
+    background-color: var(--color-grey-200);
+
+}
+
+button{
+    background-color: var(--color-purple);
+    border: none;
+    border-radius: 50%; 
+    padding: 1.25rem;
+    cursor: pointer;
+    display: flex; 
+
+    transition: background-color 0.2s ease;
+}
+
+button:hover{
+    background-color: var(--color-black);
+}
+
+button img{
+    width: 2.5rem; 
+    height: 2.5rem;
+}
+
+.results div {
+    font-size: 5rem;
+    font-weight: 700; 
+    color: var(--color-black); 
+    line-height: 1.1;
+}
+
+
+.results div span:first-child {
+    color: var(--color-purple);
+    font-weight: 800;
+    font-style: italic; 
+
+    margin-right: 0.5rem;
+}
+
+.results div span:last-child {
+    font-weight: 700;
+    font-style: italic;
+    color: var(--color-black);
+}
+
+.error-msg{
+    color: var(--color-red);
+    font-style: italic;
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+    min-height: 1.2rem;
+}
+
+.field-error label{
+    color: var(--color-red);
+}
+
+.field-error input{
+    border-color: var(--color-red);
+}
